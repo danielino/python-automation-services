@@ -1,3 +1,3 @@
 pytest
-pytest-subprocess
 pytest-cov
+pytest-subprocess

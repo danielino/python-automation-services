@@ -62,7 +62,7 @@ def test_workflow_parser_error():
         f.write("error")
         f.flush()
         try:
-            w = Workflow.load(f.name)
+            Workflow.load(f.name)
         except Exception as e:
             assert str(e) == "workflow error"
         else:

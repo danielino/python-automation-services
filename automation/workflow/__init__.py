@@ -1,12 +1,9 @@
 import logging
-import subprocess
 import typing
 from enum import IntEnum
 
 import yaml
 from easydict import EasyDict
-
-from .plugins import *
 
 
 class WorkflowManager:
@@ -98,6 +95,7 @@ class WorkflowStatus(IntEnum):
     STARTED = 0x02
     EXIT_SUCCESS = 0x03
     EXIT_FAILURE = 0x04
+
 
 class Workflow:
     """

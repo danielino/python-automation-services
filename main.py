@@ -1,11 +1,4 @@
 import logging
-import os
-import subprocess
-import typing
-from abc import abstractmethod
-
-import yaml
-from easydict import EasyDict
 
 from automation.config import ConfigManager
 from automation.workflow import Workflow
@@ -14,7 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 def main():
-    c = ConfigManager()
+    ConfigManager()
     w = Workflow.load("./tests/pipelines/basic.yml")
     for task in w.execute():
         count = 0

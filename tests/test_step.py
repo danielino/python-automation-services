@@ -1,4 +1,4 @@
-from automation.workflow import Step, Job, Workflow
+from automation.workflow import Job, Step, Workflow
 
 
 def test_step_script():

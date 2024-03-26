@@ -1,4 +1,5 @@
 from subprocess import CompletedProcess
+
 from automation.workflow.plugins import ScriptPlugin
 
 
