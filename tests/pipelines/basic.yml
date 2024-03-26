@@ -1,0 +1,30 @@
+workflow:
+  agent: root
+  parameters:
+    - type: string
+      name: gitlab_token
+      default: ''
+      required: false
+  jobs:
+    - name: run hello world
+      agent: intermediate
+      steps:
+        - name: hello world
+          script:
+            - echo "Hello, world!"
+          register: hwout
+        - name: run docker container
+          docker:
+            action: run
+            image: alpine:latest
+            command: sleep infinity
+            background: true
+            args:
+              - echo "Hello, world!"
+          register: dockerout
+        - name: git clone
+          git:
+            action: clone
+            url: https://gitlab.alm.poste.it/ptgitlab/ptgitlab.git
+            branch: master
+            path: /tmp/ptgitlab
