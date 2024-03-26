@@ -10,7 +10,6 @@ class WorkflowManager:
     pass
 
 
-# @TODO: implement execution status
 class StepExecutionResult:
     def __init__(
         self,
@@ -76,7 +75,6 @@ class Step:
             # raise CalledProcessError(f"plugin {self.plugin_name} failed.")
         if "register" in self.__dict__:
             self.job.workflow._registers[self.register].append(_status.stdout)
-        # @TODO: implement execution status
 
 
 class Job:
@@ -115,7 +113,6 @@ class Workflow:
     def registers(self):
         return self._registers
 
-    # add registers
     def add_registers(self, key, value):
         self._registers[key] = value
 
